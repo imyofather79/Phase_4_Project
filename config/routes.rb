@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   
   resources :pets, only: [:index, :create]
-  resources :owners, only: [:index, :show, :create] do
+  resources :owners, only: [:show, :create] do
     resources :pets, only: [:show, :update, :destroy]
   end
-  resources :shelters, only: [:index, :create]
+  resources :shelters, only: [:index, :create] do
+    resources :pets, only: [:show, :update, :destroy, :create]
+  end
 
   post "/signup", to: "owners#create"
   get "/me", to: "owners#show"

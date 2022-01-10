@@ -12,17 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2022_01_08_033319) do
 
-  create_table "owners", force: :cascade do |t|
-    t.string "name"
-    t.string "username"
-    t.string "password_digest"
-    t.string "city"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "pets", force: :cascade do |t|
-    t.integer "owner_id", null: false
+    t.integer "user_id", null: false
     t.integer "shelter_id", null: false
     t.string "name"
     t.string "animal"
@@ -30,8 +21,8 @@ ActiveRecord::Schema.define(version: 2022_01_08_033319) do
     t.string "sex"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["owner_id"], name: "index_pets_on_owner_id"
     t.index ["shelter_id"], name: "index_pets_on_shelter_id"
+    t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
   create_table "shelters", force: :cascade do |t|
@@ -42,6 +33,14 @@ ActiveRecord::Schema.define(version: 2022_01_08_033319) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "pets", "owners"
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "pets", "shelters"
+  add_foreign_key "pets", "users"
 end

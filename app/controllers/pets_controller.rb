@@ -36,7 +36,7 @@ class PetsController < ApplicationController
     end
 
     def find_pet
-
+        
     end
 
 

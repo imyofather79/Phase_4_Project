@@ -6,7 +6,9 @@ function PetForm({ id, onAddPet }) {
         animal: "",
         age: "",
         sex: "",
+        user_id: id,
         shelter_id: id
+
       });
     
       function handleChange(e) {
@@ -34,6 +36,8 @@ function PetForm({ id, onAddPet }) {
           .then((r) => r.json())
           .then(onAddPet);
       }
+
+      console.log(formData)
     return (
         <div>
         <form onSubmit={handleSubmit} >

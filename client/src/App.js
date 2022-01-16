@@ -78,7 +78,8 @@ function App() {
               <ShelterPage 
                 onClickUpdate={handleUpdatePet}
                 onAddPet={handleAddPet}  
-                onAdaptPet={handleAdoptPet}
+                onAdoptPet={handleAdoptPet}
+                pets={pets}
               />}
             />
           </Routes>

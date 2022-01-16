@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :pets, only: [:index, :create]
+  resources :pets, only: [:index, :create, :destroy]
   resources :users, only: [:show, :create] do
     resources :pets, only: [:show, :update, :destroy]
   end

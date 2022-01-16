@@ -1,8 +1,8 @@
 import React,{ useState, useEffect } from 'react'
-import PetForm from '../components/PetForm';
+// import PetForm from '../components/PetForm';
 import ShelterCard from '../components/ShelterCard'
 
-function ShelterPage({  onClickUpdate, onAddPet, onAdaptPet }) {
+function ShelterPage({ pets, onClickUpdate, onAddPet, onAdoptPet }) {
 
     const [shelters, setShelters] = useState([]);
 
@@ -13,10 +13,8 @@ function ShelterPage({  onClickUpdate, onAddPet, onAdaptPet }) {
           }
         });
       }, [])
-      console.log(shelters)
-      const shelterCards = shelters.map((shelter) => {
-        <ShelterCard key={shelter.id} shelter={shelter} onAdaptPet={onAdaptPet} />
-      })
+
+      const shelterCards = shelters.map((shelter) => <ShelterCard key={shelter.id} shelter={shelter} onAdoptPet={onAdoptPet} pets={pets} />)
 
     return (
         <div>
@@ -25,12 +23,12 @@ function ShelterPage({  onClickUpdate, onAddPet, onAdaptPet }) {
             {/* // <ShelterCard  
             //     onClickUpdate={onClickUpdate}
             //     onAddPet={onAddPet}  
-            //     onAdaptPet={onAdaptPet}
+            //     onAdoptPet={onAdoptPet}
             //     shelters={shelters}
             //     setShelters={setShelters}
             // /> */}
             {shelterCards}
-            <PetForm/>
+            {/* <PetForm/> */}
         </div>
     )
 }

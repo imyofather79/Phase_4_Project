@@ -38,7 +38,7 @@ pet1 = Pet.create(
     name: "Pete",
     animal: "Dog",
     shelter_id: 1,
-    user_id: "",
+    user_id: 1,
     age: 5,
     sex: "Male"
 )
@@ -46,7 +46,7 @@ pet2 = Pet.create(
     name: "Apple",
     animal: "Dog",
     shelter_id: 2,
-    user_id: "",
+    user_id: 1,
     age: 8,
     sex: "Male"
 )
@@ -54,7 +54,7 @@ pet3 = Pet.create(
     name: "Pineapple",
     animal: "Cat",
     shelter_id: 2,
-    user_id: "",
+    user_id: 1,
     age: 2,
     sex: "Female"
 )
@@ -62,20 +62,9 @@ pet4 = Pet.create(
     name: "Pear",
     animal: "Cat",
     shelter_id: 3,
-    user_id: "",
+    user_id: 1,
     age: 4,
     sex: "Male"
 )
-pet5 = Pet.create(
-    name: "Mango",
-    animal: "Goldfish",
-    shelter_id: 3,
-    user_id: "",
-    age: 9,
-    sex: "Female"
-)
-
-
-
 
 puts "✅ Done seeding!"

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :create] do
     resources :pets, only: [:show, :update, :destroy]
   end
-  resources :shelters, only: [:index, :create] do
+  resources :shelters, only: [:index, :show] do
     resources :pets, only: [:show, :update, :destroy, :create]
   end
 

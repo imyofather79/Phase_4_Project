@@ -1,5 +1,7 @@
 class PetsController < ApplicationController
 
+skip_before_action :authorize, only: :create
+
     def index
         pets = Pet.all
         render json: pets
@@ -35,9 +37,7 @@ class PetsController < ApplicationController
         params.permit(:name, :animal, :age, :sex)
     end
 
-    def find_pet
+    # def find_pet
         
-    end
-
-
+    # end
 end

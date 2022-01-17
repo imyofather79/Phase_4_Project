@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   
   resources :pets, only: [:index, :create, :destroy]
-  resources :users, only: [:show, :create] do
+  resources :users, only: [:show] do
     resources :pets, only: [:show, :update, :destroy]
   end
   resources :shelters, only: [:index, :show] do
-    resources :pets, only: [:show, :update, :destroy, :create]
+    resources :pets, only: [:show, :update]
   end
 
   post "/signup", to: "users#create"

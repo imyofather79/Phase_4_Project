@@ -34,7 +34,7 @@ skip_before_action :authorize, only: :create
     private
 
     def pet_params
-        params.permit(:name, :animal, :age, :sex)
+        params.permit(:name, :animal, :age, :sex, :shelter_id, :user_id, :isAdopted)
     end
 
     # def find_pet

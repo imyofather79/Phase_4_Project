@@ -5,6 +5,6 @@ class Shelter < ApplicationRecord
 
     validates :name, presence: true
     validates :city, presence: true
-    validates :phone_number, length: { is: 10 }
+    validates :phone_number, uniqueness: true, length: { is: 10 }
 
 end

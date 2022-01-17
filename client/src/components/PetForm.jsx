@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 
-function PetForm({ id, onAddPet }) {
+function PetForm({ shelterId, onAddPet }) {
     const [formData, setFormData] = useState({
         name: "",
         animal: "",
         age: "",
         sex: "",
-        user_id: id,
-        shelter_id: id
-
+        user_id: null,
+        shelter_id: shelterId,
+        isAdopted: false
       });
-    
+
       function handleChange(e) {
         setFormData({
           ...formData,
@@ -18,15 +18,33 @@ function PetForm({ id, onAddPet }) {
         });
       }
     
+      // function handleSubmit(e, id) {
+      //   e.preventDefault();
+      //   const newPet = {
+      //     ...formData,
+      //     shelter_id: id,
+      //   };
+    
+      //   fetch("/pets", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(newPet),
+      //   })
+      //     .then((r) => r.json())
+      //     .then(onAddPet);
+      // }
+
       function handleSubmit(e) {
         e.preventDefault();
-    
         const newPet = {
           ...formData,
-          shelter_id: id,
+          shelter_id: shelterId,
+          isAdopted: false
         };
     
-        fetch('/pets', {
+        fetch("/pets", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

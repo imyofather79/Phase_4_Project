@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_01_08_033319) do
     t.string "animal"
     t.integer "age"
     t.string "sex"
+    t.boolean "isAdopted"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["shelter_id"], name: "index_pets_on_shelter_id"

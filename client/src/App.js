@@ -36,6 +36,7 @@ function App() {
 
   console.log(pets)
   console.log(user)
+
   function handleAddPet(newPet) {
     setPets([...pets, newPet]);
   }
@@ -45,12 +46,12 @@ function App() {
     setPets(updatedPets);
   }
 
-  function handleUpdatePet(updatedPet) {
-    const updatedPets = pets.map((pet) => {
-      return pet.id === updatedPet.id ? updatedPet : pet
-    });
-    setPets(updatedPets);
-  }
+  // function handleUpdatePet(updatedPet) {
+  //   const updatedPets = pets.map((pet) => {
+  //     return pet.id === updatedPet.id ? updatedPet : pet
+  //   });
+  //   setPets(updatedPets);
+  // }
 
   function handleAdoptPet(id) {
     const updatedPets = pets.map((pet) => {
@@ -76,7 +77,7 @@ function App() {
             />
             <Route path="/shelters" element={
               <ShelterPage 
-                onClickUpdate={handleUpdatePet}
+                // onClickUpdate={handleUpdatePet}
                 onAddPet={handleAddPet}  
                 onAdoptPet={handleAdoptPet}
                 pets={pets}

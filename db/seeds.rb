@@ -40,6 +40,7 @@ pet1 = Pet.create(
     shelter_id: 1,
     user_id: 1,
     age: 5,
+    isAdopted: true,
     sex: "Male"
 )
 pet2 = Pet.create(
@@ -48,14 +49,16 @@ pet2 = Pet.create(
     shelter_id: 2,
     user_id: 1,
     age: 8,
+    isAdopted: true,
     sex: "Male"
 )
 pet3 = Pet.create(
     name: "Pineapple",
     animal: "Cat",
     shelter_id: 2,
-    user_id: 1,
+    user_id: 2,
     age: 2,
+    isAdopted: true,
     sex: "Female"
 )
 pet4 = Pet.create(
@@ -64,6 +67,7 @@ pet4 = Pet.create(
     shelter_id: 3,
     user_id: 1,
     age: 4,
+    isAdopted: true,
     sex: "Male"
 )
 

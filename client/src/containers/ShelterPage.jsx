@@ -2,7 +2,7 @@ import React,{ useState, useEffect } from 'react'
 // import PetForm from '../components/PetForm';
 import ShelterCard from '../components/ShelterCard'
 
-function ShelterPage({ pets, onClickUpdate, onAddPet, onAdoptPet }) {
+function ShelterPage({ pets, onAddPet, onAdoptPet }) {
 
     const [shelters, setShelters] = useState([]);
 
@@ -14,7 +14,7 @@ function ShelterPage({ pets, onClickUpdate, onAddPet, onAdoptPet }) {
         });
       }, [])
 
-      const shelterCards = shelters.map((shelter) => <ShelterCard key={shelter.id} shelter={shelter} onAdoptPet={onAdoptPet} pets={pets} />)
+      const shelterCards = shelters.map((shelter) => <ShelterCard shelterId={shelter.id} shelter={shelter} onAdoptPet={onAdoptPet} pets={pets} onAddPet={onAddPet}/>)
 
     return (
         <div>

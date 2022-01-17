@@ -53,13 +53,19 @@ function App() {
   //   setPets(updatedPets);
   // }
 
+  // function handleAdoptPet(id) {
+  //   const updatedPets = pets.map((pet) => {
+  //     return pet.id === id ? { ...pet, isAdopted: true } : pet;
+  //   });
+  //   setPets(updatedPets);
+  // }
   function handleAdoptPet(id) {
     const updatedPets = pets.map((pet) => {
       return pet.id === id ? { ...pet, isAdopted: true } : pet;
     });
     setPets(updatedPets);
   }
-
+  
     return (
       <div>
         <Router>
@@ -73,6 +79,7 @@ function App() {
                 onClickDelete={handleDeletePet} 
                 user={user}
                 setUser={setUser}
+                pets={pets}
               />}
             />
             <Route path="/shelters" element={

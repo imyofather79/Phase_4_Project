@@ -2,13 +2,15 @@ import React from 'react'
 
 function PetCard({ petId, pet, onAdoptPet, shelterId, onClickDelete, user }) {
   
-  const { name, sex, animal, age, isAdopted } = pet;
+  const { id, name, sex, animal, age, isAdopted } = pet;
 
-console.log(name)
+console.log(petId)
+console.log(shelterId)
 
-  function handleRemove(petToDelete, id){
-    // event.preventDefault()
-    fetch(`/pets/${id}`, {
+
+  function handleRemove(event, petToDelete, petId){
+    event.preventDefault()
+    fetch(`/pets/${petId}`, {
       method: "DELETE",
       })
           .then((r) => r.json())
@@ -16,14 +18,24 @@ console.log(name)
           onClickDelete(petToDelete)
       ));
   }
-  function handleAdoptedClick() {
-    onAdoptPet(petId);
-  }
-  
-function filterAnimal(){
-  
-}
 
+  function handleAdoptedClick(event) {
+    event.preventDefault()
+    fetch(`/pets/${petId}`, {
+      method: "PATCH",
+      headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(),
+      })
+        .then((r) => r.json())
+        .then(onAdoptPet);
+    }
+  
+// const filterAnimal
+
+
+console.log(pet.isAdopted)
 
   return (
         <div>
@@ -32,7 +44,7 @@ function filterAnimal(){
             <p>gender: {sex}</p>
             <p>age: {age}</p>
             <p>type of animal: {animal}</p>
-            {isAdopted ? (
+            {pet.isAdopted ? (
           <button>Already adopted</button>
             ) : (
           <button onClick={handleAdoptedClick}>

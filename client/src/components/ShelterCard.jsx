@@ -12,9 +12,14 @@ function handleClick(){
 }
 console.log(pets)
 
-const petCards = pets.map((pet) => (
-  <PetCard petId={pet.id} pet={pet} onAdoptPet={onAdoptPet} shelterId={shelter.id}/>
-));
+
+const petCards = pets.map((pet) => {
+  if (pet.shelter_id === shelterId){
+  return <PetCard petId={pet.id} pet={pet} onAdoptPet={onAdoptPet} shelterId={shelter.id}/>
+  } else {
+    return null  
+  }
+});
 
   return (
         <div>

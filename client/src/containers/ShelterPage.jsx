@@ -1,5 +1,4 @@
 import React,{ useState, useEffect } from 'react'
-// import PetForm from '../components/PetForm';
 import ShelterCard from '../components/ShelterCard'
 
 function ShelterPage({ user, pets, onAddPet, onAdoptPet, onUpdate, setPets }) {
@@ -23,6 +22,7 @@ function ShelterPage({ user, pets, onAddPet, onAdoptPet, onUpdate, setPets }) {
           onAddPet={onAddPet} 
           onUpdate={onUpdate}
           setPets={setPets}
+          user={user}
         />))
 
     return (

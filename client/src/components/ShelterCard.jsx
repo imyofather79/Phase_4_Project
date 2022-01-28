@@ -15,13 +15,14 @@ console.log(pets)
 
 
 const petCards = pets.map((pet) => {
-  if (pet.shelter_id === shelterId){
+  if (pet.shelter_id === shelterId && !pet.isAdopted){
   return <PetCard 
     pet={pet} 
     onAdoptPet={onAdoptPet} 
     shelterId={shelter.id}
     onUpdate={onUpdate}
     setPets={setPets}
+    user={user}
     />
   } else {
     return null  

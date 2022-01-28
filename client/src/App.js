@@ -15,8 +15,8 @@ function App() {
   const [pets, setPets] = useState([]);
 
 
-  useEffect(() => {
-    fetch("/pets").then((r) => {
+useEffect( async () => {
+    await fetch("/pets").then((r) => {
       if (r.ok) {
         r.json().then((pets) => setPets(pets))
       }
@@ -24,8 +24,8 @@ function App() {
   }, [])
   
 
-  useEffect(() => {
-    fetch("/me").then((r) => {
+  useEffect( async () => {
+    await fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user))
       }
@@ -33,7 +33,7 @@ function App() {
   }, [])
 
   if (!user) return <Login onLogin={setUser} />;
-  
+
 
   function handleAddPet(newPet) {
     setPets([...pets, newPet]);
@@ -57,9 +57,10 @@ function App() {
   //   });
   //   setPets(updatedPets);
   // }
+
   function handleAdoptPet(id) {
     const updatedPets = pets.map((pet) => {
-      return pet.id === id ? { ...pet, isAdopted: true } : pet;
+      return pet.id === id ? { ...pet, isAdopted: true, user_id: user.id } : pet;
     });
     setPets(updatedPets);
   }

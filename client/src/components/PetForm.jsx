@@ -37,7 +37,6 @@ function PetForm({ shelterId, onAddPet }) {
           .then(onAddPet);
       }
 
-      console.log(formData)
     return (
         <div>
         <form onSubmit={handleSubmit} >
@@ -61,11 +60,9 @@ function PetForm({ shelterId, onAddPet }) {
         />
         <br />
         <select
-          // type="text"
           name="animal"
           onChange={handleChange}
           value={formData.animal}
-          // placeholder="Enter the type of animal..."
           className="input-text"
         >
           <option value="" disabled>Please select the type of animal</option>
@@ -74,11 +71,9 @@ function PetForm({ shelterId, onAddPet }) {
         </select>
         <br />
         <select
-          // type="text"
           name="sex"
           onChange={handleChange}
           value={formData.sex}
-          // placeholder="Enter a animal's gender..."
           className="input-text"
         >
           <option value="" disabled>Animal's gender</option>

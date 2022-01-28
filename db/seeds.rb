@@ -1,21 +1,12 @@
 puts "🌱 Seeding..."
 
-# user1 = User.create(
-#     name: "Peter",
-#     username: "user1",
-#     password_digest: "1"
+user1 = User.create(
+    name: "Admin",
+    username: "Admin",
+    password_digest: "$2a$12$P08ofK.iMHuCs8FV3tdMxevXWInHOzetGwE/pUAZHNOB/QSWFPdv6"
     
-# )
-# user2 = User.create(
-#     name: "Karen",
-#     username: "user2",
-#     password_digest: "1"
-# )
-# user3 = User.create(
-#     name: "Sam",
-#     username: "user3",
-#     password_digest: "1"
-# )
+)
+
 
 shelter1 = Shelter.create(
     name: "Denver Animal Shelter",
@@ -40,7 +31,7 @@ pet1 = Pet.create(
     shelter_id: 1,
     user_id: 1,
     age: 5,
-    isAdopted: true,
+    isAdopted: false,
     sex: "Male"
 )
 pet2 = Pet.create(
@@ -49,16 +40,16 @@ pet2 = Pet.create(
     shelter_id: 2,
     user_id: 1,
     age: 8,
-    isAdopted: true,
+    isAdopted: false,
     sex: "Male"
 )
 pet3 = Pet.create(
     name: "Pineapple",
     animal: "Cat",
     shelter_id: 2,
-    user_id: 2,
+    user_id: 1,
     age: 2,
-    isAdopted: true,
+    isAdopted: false,
     sex: "Female"
 )
 pet4 = Pet.create(
@@ -67,7 +58,7 @@ pet4 = Pet.create(
     shelter_id: 3,
     user_id: 1,
     age: 4,
-    isAdopted: true,
+    isAdopted: false,
     sex: "Male"
 )
 

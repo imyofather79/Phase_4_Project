@@ -15,6 +15,10 @@ gem 'figaro'
 
 gem 'httparty'
 
+# gem 'nilify_blanks', '~> 1.2', '>= 1.2.1'
+
+# gem 'nilly_vanilly'
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

@@ -6,7 +6,7 @@ function PetForm({ shelterId, onAddPet }) {
         animal: "",
         age: "",
         sex: "",
-        user_id: null,
+        user_id: 1,
         shelter_id: shelterId,
         isAdopted: false
       });
@@ -17,24 +17,6 @@ function PetForm({ shelterId, onAddPet }) {
           [e.target.name]: e.target.value,
         });
       }
-    
-      // function handleSubmit(e, id) {
-      //   e.preventDefault();
-      //   const newPet = {
-      //     ...formData,
-      //     shelter_id: id,
-      //   };
-    
-      //   fetch("/pets", {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify(newPet),
-      //   })
-      //     .then((r) => r.json())
-      //     .then(onAddPet);
-      // }
 
       function handleSubmit(e) {
         e.preventDefault();
@@ -43,13 +25,13 @@ function PetForm({ shelterId, onAddPet }) {
           shelter_id: shelterId,
           isAdopted: false
         };
-    
         fetch("/pets", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(newPet),
+          
         })
           .then((r) => r.json())
           .then(onAddPet);

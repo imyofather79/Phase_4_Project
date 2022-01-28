@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import PetForm from './PetForm';
 import PetCard from "./PetCard"
+import UserPage from '../containers/UserPage';
 
-function ShelterCard({ pets, shelterId, shelter, onAdoptPet, onAddPet }) {
+function ShelterCard({ user, pets, shelterId, shelter, onAdoptPet, onAddPet, onUpdate, setPets }) {
   const [showForm, setShowForm] = useState(false);
   const {id, name, city, phone_number } = shelter;
   
@@ -15,11 +16,23 @@ console.log(pets)
 
 const petCards = pets.map((pet) => {
   if (pet.shelter_id === shelterId){
-  return <PetCard petId={pet.id} pet={pet} onAdoptPet={onAdoptPet} shelterId={shelter.id}/>
+  return <PetCard 
+    pet={pet} 
+    onAdoptPet={onAdoptPet} 
+    shelterId={shelter.id}
+    onUpdate={onUpdate}
+    setPets={setPets}
+    />
   } else {
     return null  
   }
 });
+
+// function adminForm(){
+//   if(user.id === 1){
+//   {showForm ? <PetForm shelterId={shelterId} onAddPet={onAddPet}/> : null}
+// }}
+
 
   return (
         <div>

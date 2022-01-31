@@ -2,7 +2,7 @@ import React from 'react'
 
 function PetCard({ pet, onAdoptPet, shelterId, onClickDelete, user, onUpdate, setPets }) {
   
-  const { id, name, sex, animal, age, isAdopted } = pet;
+  const { name, sex, animal, age } = pet;
 
 console.log(pet)
 
@@ -16,7 +16,6 @@ console.log(pet)
           );
   }
 
-  console.log(user)
   function handleAdoptedClick() {
     const updateObj = {
       user_id: user.id,

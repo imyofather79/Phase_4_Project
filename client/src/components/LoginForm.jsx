@@ -19,7 +19,9 @@ function LoginForm({ onLogin }) {
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => onLogin(user));
+        r.json().then((user) =>  {
+          onLogin(user);
+        });
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

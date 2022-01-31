@@ -9,7 +9,7 @@ function SignUpForm({ onLogin }) {
   const [name, setName] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  
   function handleSubmit(e) {
     e.preventDefault();
     setErrors([]);
@@ -28,7 +28,9 @@ function SignUpForm({ onLogin }) {
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => onLogin(user));
+        r.json().then((user) => {
+          onLogin(user);
+        });
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

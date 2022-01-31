@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import PetForm from './PetForm';
 import PetCard from "./PetCard"
-import UserPage from '../containers/UserPage';
 
 function ShelterCard({ user, pets, shelterId, shelter, onAdoptPet, onAddPet, onUpdate, setPets }) {
   const [showForm, setShowForm] = useState(false);

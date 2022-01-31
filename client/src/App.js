@@ -15,8 +15,8 @@ function App() {
   const [pets, setPets] = useState([]);
 
 
-useEffect( async () => {
-    await fetch("/pets").then((r) => {
+useEffect(() => {
+    fetch("/pets").then((r) => {
       if (r.ok) {
         r.json().then((pets) => setPets(pets))
       }
@@ -24,8 +24,8 @@ useEffect( async () => {
   }, [])
   
 
-  useEffect( async () => {
-    await fetch("/me").then((r) => {
+  useEffect(() => {
+    fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user))
       }

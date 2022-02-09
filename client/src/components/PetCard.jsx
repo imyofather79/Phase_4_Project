@@ -1,8 +1,9 @@
 import React from 'react'
+import { Button } from "../styles";
 
-function PetCard({ pet, onAdoptPet, shelterId, onClickDelete, user, onUpdate, setPets }) {
+function PetCard({ pet, onAdoptPet, onClickDelete, user }) {
   
-  const { name, sex, animal, age } = pet;
+  const { id, name, sex, animal, age } = pet;
 
 console.log(pet)
 
@@ -31,7 +32,6 @@ console.log(pet)
       })
         .then((r) => r.json())
         .then(onAdoptPet);
-        // .then(setPets([...pet]));
     }
 
 
@@ -50,26 +50,26 @@ console.log(pet)
         })
           .then((r) => r.json())
           .then(onAdoptPet);
-          // .then(setPets([...pet]));
       }
   
   return (
-        <div>
             <div> 
-              <p>name: {name}</p>
-              <p>gender: {sex}</p>
-              <p>age: {age}</p>
-              <p>type of animal: {animal}</p>
+              <h5>animal id: {id}</h5>
+              <h5>name: {name}</h5>
+              <h5>gender: {sex}</h5>
+              <h5>age: {age}</h5>
+              <h5>type of animal: {animal}</h5>
               {pet.isAdopted ? (
-            <button onClick={handleSendBack}>Send back to shelter</button>
+            <Button onClick={handleSendBack}>Send back to shelter</Button>
               ) : (
-            <button onClick={handleAdoptedClick}>
+            <Button onClick={handleAdoptedClick}>
               Adopt pet
-            </button>
+            </Button>
               )}
-              <button onClick={handleRemove}>Remove</button>
-              </div>
-        </div>
+              <Button onClick={handleRemove}>Remove</Button>
+              <br/>
+              <br/>
+          </div>
     )
 }
 export default PetCard

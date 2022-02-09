@@ -28,16 +28,7 @@ function ShelterPage({ user, pets, onAddPet, onAdoptPet, onUpdate, setPets }) {
     return (
         <div>
             <h1>Shelter Page</h1>
-          {/* <h1>Shelters</h1> */}
-            {/* // <ShelterCard  
-            //     onClickUpdate={onClickUpdate}
-            //     onAddPet={onAddPet}  
-            //     onAdoptPet={onAdoptPet}
-            //     shelters={shelters}
-            //     setShelters={setShelters}
-            // /> */}
             {shelterCards}
-            {/* <PetForm/> */}
         </div>
     )
 }

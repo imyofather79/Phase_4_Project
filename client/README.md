@@ -3,9 +3,9 @@
 This is an application where the user can select and adopt the animal from the shelter. 
 
 ## MVP
-1. The user (Admin) can create, update, destroy any animals from the different shelters.
+1. The user can create, update, destroy any animals from the different shelters.
 2. All newly created animals are assign to the Admin and to the corresponsing shelters (the new animal will always belong to Admin and belong to the shelter that it was created from).
-3. Users are able to create/sign up an account.
+3. Users are able to create an account.
 4. Users are able to log in and log out from the account that they created.
 
 

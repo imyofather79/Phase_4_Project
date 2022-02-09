@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PetForm from './PetForm';
 import PetCard from "./PetCard"
+import { Button, Label } from "../styles";
 
 function ShelterCard({ user, pets, shelterId, shelter, onAdoptPet, onAddPet, onUpdate, setPets }) {
   const [showForm, setShowForm] = useState(false);
@@ -36,13 +37,15 @@ const petCards = pets.map((pet) => {
 
   return (
         <div>
-          <h3>Shelters {id}</h3>
-          <h3>{name}</h3> 
-          <h3>City: {city}</h3>
-          <h3>Contact Number: {phone_number}</h3> 
+          <Label>Shelters {id}</Label>
+          <Label>{name}</Label> 
+          <Label>City: {city}</Label>
+          <Label>Contact Number: {phone_number}</Label> 
           {petCards}
           {showForm ? <PetForm shelterId={shelterId} onAddPet={onAddPet}/> : null}
-          <button onClick={handleClick}>Add a new animal</button>
+          <Button onClick={handleClick}>Click to create a new animal</Button>
+        <br/>
+        <br/>
         </div>
     )
 }

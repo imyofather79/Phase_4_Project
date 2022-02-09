@@ -5,6 +5,5 @@ class Pet < ApplicationRecord
 
     validates :name, presence: true
     validates :animal, presence: true
-    # validates :sex, inclusion: { in: ['Male', 'Female', 'Neutered Male', 'Spayed Female'] }
     
 end
